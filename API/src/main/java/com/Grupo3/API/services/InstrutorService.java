@@ -10,6 +10,7 @@ import com.Grupo3.API.repositories.InstrutorRepository;
 
 @Service
 public class InstrutorService {
+	
 	@Autowired
 	InstrutorRepository instrutorRep;
 

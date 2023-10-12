@@ -4,12 +4,16 @@ import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "telefoneid", scope = Telefone.class)
+@Entity
+@Table(name = "telefone")
 public class Telefone {
 
 	@Id
@@ -17,8 +21,6 @@ public class Telefone {
 	@Column(name = "telefoneid")
 	private Integer telefoneId;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "telefoneinstrutorid")
 	private Integer telefoneInstrutorId;
 
