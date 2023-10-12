@@ -4,6 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.Grupo3.API.entities.Telefone;
 
-public interface TelefoneRepository extends JpaRepository<Integer, Telefone>{
+public interface TelefoneRepository extends JpaRepository<Telefone, Integer>{
 
 }

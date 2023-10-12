@@ -1,3 +1,4 @@
+
 package com.Grupo3.API.services;
 
 import java.util.List;
@@ -5,46 +6,45 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.Grupo3.API.entities.Turma;
-import com.Grupo3.API.repositories.TurmaRepository;
+import com.Grupo3.API.entities.Telefone;
+import com.Grupo3.API.repositories.TelefoneRepository;
 
 @Service
-public class TurmaService {
+public class TelefoneService {
 	@Autowired
-	TurmaRepository turmaRep;
+	TelefoneRepository telefoneRep;
 
-	public List<Turma> listarTurma() {
-		return turmaRep.findAll();
+	public List<Telefone> listarTelefones() {
+		return telefoneRep.findAll();
 	}
 
-	public Turma buscarTurmaId(Integer id) {
-		return turmaRep.findById(id).orElse(null);
+	public Telefone buscarTelefoneId(Integer id) {
+		return telefoneRep.findById(id).orElse(null);
 	}
 
-	public Turma salvarTurma(Turma turma) {
-		return turmaRep.save(turma);
+	public Telefone salvarTelefone(Telefone telefone) {
+		return telefoneRep.save(telefone);
 	}
 
-	public Turma atualizarTurma(Turma turma) {
-		return turmaRep.save(turma);
+	public Telefone atualizarTelefone(Telefone telefone) {
+		return telefoneRep.save(telefone);
 	}
 
-	public Boolean deletarTurma(Turma turma) {
-		if (turma == null)
+	public Boolean deletarTelefone(Telefone telefone) {
+		if (telefone == null)
 			return false;
 
-		Turma turmaExistente = buscarTurmaId(turma.getCodigoTurma());
-		if (turmaExistente == null)
+		Telefone telefoneExistente = buscarTelefoneId(telefone.getTelefoneId());
+		if (telefoneExistente == null)
 			return false;
 
-		turmaRep.delete(turma);
+		telefoneRep.delete(telefone);
 
-		Turma turmaContinuaExistindo = buscarTurmaId(turma.getCodigoTurma());
-		if (turmaContinuaExistindo == null)
+		Telefone telefoneContinuaExistindo = buscarTelefoneId(telefone.getTelefoneId());
+		if (telefoneContinuaExistindo == null)
 			return true;
 
 		return false;
 
 	}
-
 }

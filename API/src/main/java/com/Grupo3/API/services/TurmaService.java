@@ -5,44 +5,43 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.Grupo3.API.entities.Turma;
 import com.Grupo3.API.repositories.TurmaRepository;
-import com.residencia.biblioteca.entities.Editora;
-import com.residencia.biblioteca.repositories.EditoraRepository;
 
 @Service
 public class TurmaService {
 
 	@Autowired
-	TurmaRepository editoraRep;
+	TurmaRepository turmaRep;
 
-	public List<Editora> listarEditora() {
-		return editoraRep.findAll();
+	public List<Turma> listarTurma() {
+		return turmaRep.findAll();
 	}
 
-	public Editora buscarEditoraId(Integer id) {
-		return editoraRep.findById(id).orElse(null);
+	public Turma buscarTurmaId(Integer id) {
+		return turmaRep.findById(id).orElse(null);
 	}
 
-	public Editora salvarEditora(Editora editora) {
-		return editoraRep.save(editora);
+	public Turma salvarTurma(Turma turma) {
+		return turmaRep.save(turma);
 	}
 
-	public Editora atualizaEditora(Editora editora) {
-		return editoraRep.save(editora);
+	public Turma atualizaTurma(Turma turma) {
+		return turmaRep.save(turma);
 	}
 
-	public Boolean deletarEditora(Editora editora) {
-		if (editora == null)
+	public Boolean deletarTurma(Turma turma) {
+		if (turma == null)
 			return false;
 
-		Editora editoraExistente = buscarEditoraId(editora.getCodigoEditora());
-		if (editoraExistente == null)
+		Turma turmaExistente = buscarTurmaId(turma.getTurmaId());
+		if (turmaExistente == null)
 			return false;
 
-		editoraRep.delete(editora);
+		turmaRep.delete(turma);
 
-		Editora editoraContinuaExistindo = buscarEditoraId(editora.getCodigoEditora());
-		if (editoraContinuaExistindo == null)
+		Turma turmaContinuaExistindo = buscarTurmaId(turma.getTurmaId());
+		if (turmaContinuaExistindo == null)
 			return true;
 
 		return false;

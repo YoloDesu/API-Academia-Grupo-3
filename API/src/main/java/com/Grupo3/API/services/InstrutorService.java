@@ -33,13 +33,13 @@ public class InstrutorService {
 		if (instrutor == null)
 			return false;
 
-		Instrutor instrutorExistente = buscarInstrutorId(instrutor.getNumeroMatriculaInstrutor());
+		Instrutor instrutorExistente = buscarInstrutorId(instrutor.getInstrutorId());
 		if (instrutorExistente == null)
 			return false;
 
 		instrutorRep.delete(instrutor);
 
-		Instrutor instrutorContinuaExistindo = buscarInstrutorId(instrutor.getNumeroMatriculaInstrutor());
+		Instrutor instrutorContinuaExistindo = buscarInstrutorId(instrutor.getInstrutorId());
 		if (instrutorContinuaExistindo == null)
 			return true;
 
