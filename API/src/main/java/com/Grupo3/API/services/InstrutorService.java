@@ -1,4 +1,4 @@
-package com.residencia.academia.services;
+package com.Grupo3.API.services;
 
 import java.util.List;
 
@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.Grupo3.API.entities.Instrutor;
+import com.Grupo3.API.repositories.InstrutorRepository;
 
 @Service
 public class InstrutorService {

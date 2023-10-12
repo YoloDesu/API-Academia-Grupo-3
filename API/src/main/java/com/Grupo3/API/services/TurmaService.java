@@ -1,10 +1,11 @@
-package com.residencia.academia.services;
+package com.Grupo3.API.services;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.Grupo3.API.repositories.TurmaRepository;
 import com.residencia.biblioteca.entities.Editora;
 import com.residencia.biblioteca.repositories.EditoraRepository;
 
@@ -12,7 +13,7 @@ import com.residencia.biblioteca.repositories.EditoraRepository;
 public class TurmaService {
 
 	@Autowired
-	EditoraRepository editoraRep;
+	TurmaRepository editoraRep;
 
 	public List<Editora> listarEditora() {
 		return editoraRep.findAll();
