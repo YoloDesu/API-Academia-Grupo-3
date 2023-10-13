@@ -18,7 +18,7 @@ import jakarta.persistence.Table;
 
 @JsonIdentityInfo(
 		generator = ObjectIdGenerators.PropertyGenerator.class,
-		property = "instrutorid",
+		property = "instrutorId",
 		scope = Instrutor.class
 		)
 @Entity
@@ -36,7 +36,7 @@ public class Instrutor {
 	@Column(name = "nomeinstrutor")
 	private String nomeInstrutor;
 	
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "telefoneid", referencedColumnName = "telefoneid")
 	private Telefone telefone;
 	
