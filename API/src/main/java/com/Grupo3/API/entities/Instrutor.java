@@ -36,8 +36,7 @@ public class Instrutor {
 	@Column(name = "nomeinstrutor")
 	private String nomeInstrutor;
 	
-	@OneToOne
-	@JoinColumn(name = "telefoneid", referencedColumnName = "telefoneid")
+	@OneToOne(mappedBy = "instrutor")
 	private Telefone telefone;
 	
 	@OneToMany(mappedBy = "instrutor")

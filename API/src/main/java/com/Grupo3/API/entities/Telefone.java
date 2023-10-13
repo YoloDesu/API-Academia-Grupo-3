@@ -8,6 +8,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
@@ -30,7 +31,8 @@ public class Telefone {
 	@Column(name = "numero")
 	private Double numero;
 
-	@OneToOne(mappedBy = "telefone")
+	@OneToOne
+	@JoinColumn(name = "instrutorid", referencedColumnName = "instrutorid")
 	private Instrutor instrutor;
 
 	public Integer getTelefoneId() {
